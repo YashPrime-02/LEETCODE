@@ -22,10 +22,10 @@ class Solution {
         while(l1!=null || l2!=null || carry!=0){
             int sum = carry + (l1 != null ? l1.val : 0) + (l2 != null ? l2.val : 0);
             
-            //get value for list
+            
             int digit = sum%10;
            
-            //get carry
+            
             carry = sum/10;
             
             //new node
