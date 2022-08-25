@@ -1,6 +1,7 @@
 class Solution {
     public int longestConsecutive(int[] nums) 
     {
+    Arrays.sort(nums);        
     HashMap<Integer,Boolean> map=new HashMap<>();
             for(int val:nums)
             {
