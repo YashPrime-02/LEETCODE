@@ -16,7 +16,6 @@ pq.add(nums[i]);
 }
 }
 }
-//while(pq.size()>0)
 return(pq.remove());
 }
 }
