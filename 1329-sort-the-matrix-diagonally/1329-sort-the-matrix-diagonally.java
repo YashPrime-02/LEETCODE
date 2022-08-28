@@ -11,7 +11,6 @@ sort(mat, i, 0, m, n);
     }
     return mat;
 }
-
 void sort(int[][] mat, int row, int col, int m, int n){
     PriorityQueue<Integer> pq = new PriorityQueue<>();
     int i=row;
@@ -23,7 +22,8 @@ void sort(int[][] mat, int row, int col, int m, int n){
     }
     i=row;
     j=col;
-    while(!pq.isEmpty()){
+    while(pq.size()>0)
+    {
         mat[i++][j++] = pq.poll();
     }
 }
