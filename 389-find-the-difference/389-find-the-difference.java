@@ -1,15 +1,18 @@
 class Solution {
     public char findTheDifference(String s, String t) {
-      char[] schar=s.toCharArray();
-      char[] tchar=t.toCharArray(); 
-        
-        Arrays.sort(schar);
-        Arrays.sort(tchar);
-        
-        for(int i=0; i<schar.length; i++){
-            if(schar[i]!=tchar[i]){return tchar[i];}
+            Map<Character ,Integer> map=new HashMap<>();
+       if(s.length()==0) return t.charAt(0);
+       String z=s+t;
+        for(int i=0;i<z.length();i++){
+        char x=z.charAt(i);
+            map.put(x,map.getOrDefault(x,0)+1);
         }
-        return tchar[tchar.length-1];
+        for(char i: map.keySet()){
+            int j=map.get(i);
+            if((j&1)==1) return i;
+        }
+        return 'a';
+
         
     }
 }
