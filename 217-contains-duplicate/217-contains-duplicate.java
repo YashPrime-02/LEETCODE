@@ -1,12 +1,13 @@
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        HashMap<Integer, Integer> mp = new HashMap<>();
+        HashMap<Integer, Integer> fmap = new HashMap<>();
         
         for(int i: nums){
-            if(mp.containsKey(i)) return true;
+            if(fmap.containsKey(i)) 
+                    return true;
             
             else
-                mp.put(i,1);
+                fmap.put(i,1);
         }
         return false;
     }
