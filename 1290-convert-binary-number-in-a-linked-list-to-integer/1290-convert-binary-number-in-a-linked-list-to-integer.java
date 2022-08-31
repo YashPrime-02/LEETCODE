@@ -1,11 +1,12 @@
 class Solution {
     public int getDecimalValue(ListNode head) {
-        StringBuilder sb=new StringBuilder();
-        ListNode cur=head;
-        while(cur!=null){
-            sb.append(cur.val);
-            cur=cur.next;
+        int sum = 0;
+        while(head!=null) {
+            sum = sum*2; 
+            // normally we do sum*10 like in palindrome but its base 2 not base 10;
+            sum = sum + head.val;
+            head = head.next;
         }
-        return Integer.parseInt(sb.toString(),2);
+        return sum;
     }
 }
