@@ -1,4 +1,3 @@
-import java.util.*;
 class Solution {
     public int maxProfit(int[] prices) 
     {
@@ -11,7 +10,7 @@ class Solution {
              result=Math.max(result,prices[i]-MinPro);       
              MinPro= Math.min(MinPro,prices[i]);
             }
-    return(result);
+            return(result);
     }
         
 }
