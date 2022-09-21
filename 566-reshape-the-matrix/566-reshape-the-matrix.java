@@ -1,10 +1,10 @@
 class Solution {
 
     public int[][] matrixReshape(int[][] mat, int r, int c) {
-        int m = mat.length; //row length
-        int n = mat[0].length; //column  length
+        int row = mat.length; //row length
+        int col = mat[0].length; //column  length
 
-        if (m * n != r * c) {
+        if (row * col != r * c) {
             return mat; //Checking If Matrix Can be Reshaped Or Not
         }
 
@@ -13,7 +13,7 @@ class Solution {
         int[][] res = new int[r][c];
         for (int i = 0; i < total_Elements; i++) 
         { 
-        res[i / c][i % c] = mat[i / n][i % n];
+        res[i / c][i % c] = mat[i / col][i % col];
         }
         return res;
     }
