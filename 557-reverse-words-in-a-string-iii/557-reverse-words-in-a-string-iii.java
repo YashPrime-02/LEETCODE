@@ -1,22 +1,17 @@
-public class Solution {
+class Solution {
     public String reverseWords(String s) {
-        char[] ca = s.toCharArray();
-        for (int i = 0; i < ca.length; i++) {
-            if (ca[i] != ' ') {   // when i is a non-space
-                int j = i;
-                while (j + 1 < ca.length && ca[j + 1] != ' ') { j++; } // move j to the end of the word
-                reverse(ca, i, j);
-                i = j;
-            }
+        StringBuilder Stb=new StringBuilder(s);
+        StringBuilder Rev=Stb.reverse();  
+        String str=Rev.toString(); 
+        str=" "+str;
+        str+=" ";
+        String[] arr=str.split(" ");
+        String st="";
+        for(int i=0;i<arr.length;i++) 
+        {
+            st=arr[i]+" "+st;
+            
         }
-        return new String(ca);
-    }
-
-    private void reverse(char[] ca, int i, int j) {
-        for (; i < j; i++, j--) {
-            char tmp = ca[i];
-            ca[i] = ca[j];
-            ca[j] = tmp;
-        }
+    return st.trim();
     }
 }
