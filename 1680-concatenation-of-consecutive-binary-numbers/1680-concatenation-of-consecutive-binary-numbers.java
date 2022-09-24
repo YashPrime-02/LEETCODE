@@ -1,15 +1,14 @@
 class Solution {
     public int concatenatedBinary(int n) 
     {
-    int mod=1000000007,i,len=0;
-    long ans=0;
-    for(i=1;i<=n;i++)
+    int  i,len=0;
+    long res=1;
+    for(i=2;i<=n;i++)
     {
-    String res=Integer.toBinaryString(i);
-    len=res.length();
-    ans=ans<<len;
-    ans+=i;
-    ans=ans%mod;        
+     len=(int)(Math.log(i)/Math.log(2))+1;
+     
+     res=((res<<len)|i)%1000000007;       
+     }
+    return (int)res;
     }
-            return (int)ans;}
 }
