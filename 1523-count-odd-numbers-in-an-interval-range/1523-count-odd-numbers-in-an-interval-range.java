@@ -1,17 +1,14 @@
 class Solution {
-public int countOdds(int low, int high) {
-int count =0;
-if(low % 2 != 0){
-for(int i = low; i<= high; i+=2){
-count++;
-}
-}
-else{
-for(int i = low+1; i<= high; i+= 2){
-count++;
-}
-}
-
-    return count;
-}
+    public int countOdds(int low, int high) {
+      
+       int count = (high - low + 1) / 2;
+	if (low % 2 == 1 && high % 2==1)
+        {
+            count++;
+        }
+		
+ 
+        return count;
+    }
+    
 }
