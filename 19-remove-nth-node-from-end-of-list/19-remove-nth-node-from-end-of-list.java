@@ -13,7 +13,7 @@ class Solution {
     
     ListNode start = new ListNode(0);
     ListNode slow = start, fast = start;
-    slow.next = head;
+    start.next = head;
     
    
     for(int i=1; i<=n+1; i++)   {
