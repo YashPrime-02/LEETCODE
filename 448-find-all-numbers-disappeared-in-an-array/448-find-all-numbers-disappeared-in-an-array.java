@@ -3,6 +3,7 @@ class Solution {
     {
     ArrayList<Integer> list=new ArrayList<>();
     HashSet<Integer> hs=new HashSet<>();
+            Arrays.sort(nums);
             for(int i=0;i<nums.length;i++)
             {
             hs.add(nums[i]);        
