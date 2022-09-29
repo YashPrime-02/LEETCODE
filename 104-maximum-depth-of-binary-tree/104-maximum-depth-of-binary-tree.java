@@ -1,23 +1,28 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
 class Solution {
-    int level = 0;
-    public int maxDepth(TreeNode root) {
-        //Using DFS to traverse
-        if(root == null)
-            return level;
-        visit(root, level);
-        return level;
+    public int maxDepth(TreeNode root) 
+    {
+         if (root==null) 
+            return 0; 
+        else
+        {
+            int left_height = maxDepth(root.left) ;
+            int right_height =maxDepth(root.right) ;
+            return (Math.max(left_height, right_height) + 1); 
     }
-    
-    private void visit(TreeNode node, int l){
-        //passing level and root node
-        if(node == null)
-            return;
-        //enter and add 1 to level
-        int i = l+1;
-        //get the greater one
-        level = Math.max(i,level);
-        
-        visit(node.left, i);
-        visit(node.right, i);
-    }
+}
 }
