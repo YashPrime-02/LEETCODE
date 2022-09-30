@@ -9,7 +9,7 @@ class Solution {
     {
      fmap.add(val);       
     }
-        for(i=1;i<=k;i++)
+    for(i=1;i<=k;i++)
     {
     if(!fmap.contains(i))
        break;
