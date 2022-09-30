@@ -7,7 +7,6 @@ class Solution {
     HashSet<Integer> fmap=new HashSet<>();
     for(int val:nums)
     {
-   // if(!fmap.contains(val))
      fmap.add(val);       
     }
         for(i=1;i<=k;i++)
