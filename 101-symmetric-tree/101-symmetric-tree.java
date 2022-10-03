@@ -1,14 +1,13 @@
-class Solution {
-    
-    private boolean isSymmetricfun(TreeNode left , TreeNode right){
-        if(left == null || right == null)   return (left == right);
+public class Solution {
+        public boolean isSymmetric(TreeNode root) {
+            if(root==null){return true;}
+            return isSymmetric(root.left, root.right);
+        }
         
-        if(left.val != right.val)   return false;
-        
-        return isSymmetricfun(left.left , right.right) && isSymmetricfun(left.right , right.left);
+        private boolean isSymmetric(TreeNode a, TreeNode b){
+            if(a==null&&b==null){return true;}
+            if(a==null||b==null){return false;}
+            if(a.val!=b.val){return false;}
+            return isSymmetric(a.left,b.right)&&isSymmetric(a.right,b.left);
+        }
     }
-    public boolean isSymmetric(TreeNode root) {
-        return (root == null) || isSymmetricfun(root.left , root.right);
-        
-    }
-}
