@@ -1,20 +1,15 @@
 class Solution {
     public int firstMissingPositive(int[] nums) 
-    {
-    int i=0;        
+    { 
     Arrays.sort(nums);
-    int k=nums[nums.length-1];        
-    HashSet<Integer> fmap=new HashSet<>();
-    for(int val:nums)
+    int ans = 1;
+    for (int i = 0; i < nums.length; i++) 
     {
-     fmap.add(val);       
+      if (nums[i] > ans)
+        return ans;
+      else if(nums[i]==ans)
+              ans++;
     }
-    for(i=1;i<=nums.length;i++)
-    {
-    if(!fmap.contains(i))
-       break;
+    return ans;
     }
-    return i;        
-    }
-    
-    }
+}
