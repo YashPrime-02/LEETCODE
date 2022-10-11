@@ -1,12 +1,17 @@
-class Solution {
-    public boolean increasingTriplet(int[] nums) {
-       int max1 = Integer.MAX_VALUE;
-       int max2 = Integer.MAX_VALUE;
-       for(int n : nums) {
-           if(n <= max1) max1 = n;
-           else if(n <= max2) max2 = n;
-           else return true;
-       }
-       return false;
+class Solution 
+{
+    public boolean increasingTriplet(int[] nums)
+    {
+        int first=Integer.MAX_VALUE;  //for the first starting smaller val
+        int second=Integer.MAX_VALUE; //then the next Bigger val
+        for(int i : nums)
+        {
+            if(first>=i)   first=i;
+            else if(second>=i)  second=i;
+            else
+                return true; // if we found the val that are both greater than the  
+                             // first and second we can say we found required sequence
+        }
+        return false;
     }
 }
